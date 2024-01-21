@@ -17,9 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="flex flex-col">
+        <div>
+          <div className="fixed top-0 left-0">
           <NavBar />
-          <div>{children}</div>
+          </div>
+          <div className="h-screen mt-16">{children}</div>
         </div>
       </body>
     </html>

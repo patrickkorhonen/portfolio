@@ -4,7 +4,7 @@ import { AiFillHome } from "react-icons/ai";
 
 const NavBar = () => {
   return (
-    <div className="flex flex-row h-16 items-center bg-red-300">
+    <div className="flex flex-row h-16 w-screen items-center bg-red-300">
       <Link href="/">
         <AiFillHome className="m-10 text-4xl drop-shadow-md cursor-pointer" />
       </Link>
