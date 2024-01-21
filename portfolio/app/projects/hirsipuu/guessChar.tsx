@@ -22,7 +22,7 @@ const GuessChar = (props: any) => {
     }
   }
 
-  const charArray: string[] = props.word.split('').slice(0, -1)
+  const charArray: string[] = props.word.split('')
 
   const distinctCharArray = getDistinct(charArray.filter((n) => n != '-'))
 
