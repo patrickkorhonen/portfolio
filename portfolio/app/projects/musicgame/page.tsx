@@ -8,8 +8,8 @@ const musicGame = async () => {
   );
 
   const headers = {
-    "X-RapidAPI-Key": "42f779dcd6msh4e16d8c64468c02p10f472jsn26aa22946432",
-    "X-RapidAPI-Host": "deezerdevs-deezer.p.rapidapi.com",
+    "X-RapidAPI-Key": "",
+    "X-RapidAPI-Host": "",
   };
 
   const response = await fetch(
