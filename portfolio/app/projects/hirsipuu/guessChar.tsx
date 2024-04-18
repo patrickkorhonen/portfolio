@@ -39,7 +39,7 @@ const GuessChar = () => {
     }
   }
 
-  const charArray: string[] = word.split('').slice(0, -1)
+  const charArray: string[] = word.split('').slice(0)
 
   const distinctCharArray = getDistinct(charArray.filter((n) => n != '-'))
 
