@@ -1,5 +1,7 @@
 "use client";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
+import { promises as fs } from "fs";
+import { useEffect } from "react";
 
 const chars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', 'Å', 'Ä', 'Ö']
 
@@ -9,7 +11,22 @@ const getDistinct = (array: string[]) => (
 	))
 )
 
-const GuessChar = (props: any) => {
+const GuessChar = () => {
+
+  const [word, setWord] = useState<string>("");
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await fetch("/sanat.txt");
+      const text = await response.text();
+      const words = text.split("\n");
+      const randomIndex = Math.floor(Math.random() * words.length);
+      setWord(words[randomIndex]);
+    };
+  
+    fetchData();
+  }, []);
+  
 
   const [GuessAmount, setGuessAmount] = useState(7)
 
@@ -22,7 +39,7 @@ const GuessChar = (props: any) => {
     }
   }
 
-  const charArray: string[] = props.word.split('')
+  const charArray: string[] = word.split('').slice(0, -1)
 
   const distinctCharArray = getDistinct(charArray.filter((n) => n != '-'))
 
@@ -115,7 +132,7 @@ const GuessChar = (props: any) => {
       ) : (
         <div className="text-center">
         <p className="font-medium mt-10 max-[1900px]:mt-6 text-xl">HÄVISIT PELIN</p>
-        <p className="mt-2">Oikea sana oli: {props.word}</p>
+        <p className="mt-2">Oikea sana oli: {word}</p>
         <button className="border-4 border-sky-300 p-4 mt-4 rounded-xl bg-sky-300 hover:border-sky-400" onClick={() => window.location.reload()}>UUSI PELI
         </button>
         </div>
