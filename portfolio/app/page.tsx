@@ -40,8 +40,7 @@ export default function Home() {
             Hi, my name is Patrick. Welcome to my portfolio website!
           </p>
           <p className="text-slate-200 text-xl mt-4">
-            I am a CCIS master's student from Aalto University with a passion
-            for software development and technology.
+            I am a CCIS master&apos;s student from Aalto University with a passion for software development and technology.
           </p>
           <Link href="/contact">
             <div className="bg-white w-max py-2 px-4 mt-8 text-[#417fd1] text-lg font-bold rounded hover:shadow-xl">
