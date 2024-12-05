@@ -1,24 +1,35 @@
+"use client";
 import Link from "next/link";
-import React from "react";
-import { AiFillHome } from "react-icons/ai";
+
+const navLinks = [
+  { name: "Projects", href: "/projects" },
+  { name: "Skills", href: "/skills" },
+  { name: "About me", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
 
 const NavBar = () => {
   return (
-    <div className="flex flex-row h-16 w-screen items-center bg-red-300">
-      <Link href="/">
-        <AiFillHome className="m-10 text-4xl drop-shadow-md cursor-pointer" />
-      </Link>
-      <Link className="mr-2" href="/projects">
-        <div className="text-xl drop-shadow-md cursor-pointer bg-red-200 hover:shadow-lg hover:bg-red-400 p-2 rounded-lg">
-          Projects
-        </div>
-      </Link>
-      <Link className="m-2" href="/about">
-        <div className="text-xl drop-shadow-md cursor-pointer bg-red-200 hover:shadow-lg hover:bg-red-400 p-2 rounded-lg">
-          About me
-        </div>
-      </Link>
-    </div>
+    <div className="grid grid-cols-3">
+            <Link className="cursor-default col-span-1" href="/">
+              <div className="text-3xl font-black text-center text-[#417fd1]">
+                Portfolio
+              </div>
+            </Link>
+            <div className="flex flex-row justify-around col-span-2">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.name}
+                  className="flex items-center"
+                  href={link.href}
+                >
+                  <div className="text-xl text-center text-black hover:text-[#417fd1] hover:underline underline-offset-8">
+                    {link.name}
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
   );
 };
 
