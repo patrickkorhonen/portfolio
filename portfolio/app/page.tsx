@@ -7,7 +7,7 @@ import BurgerMenu from "./components/BurgerMenu";
 
 export default function Home() {
   return (
-    <div className="lg:grid lg:grid-cols-3 flex flex-col justify-between flex-grow">
+    <div className="lg:grid lg:grid-cols-3 flex flex-col justify-between flex-grow w-screen">
       <div className="col-span-2 h-full p-8 flex flex-col">
         <div className="md:hidden">
           <BurgerMenu />

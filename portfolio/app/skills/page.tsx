@@ -61,7 +61,7 @@ const skills = [
 
 const SkillsPage = () => {
   return (
-    <div className="flex flex-col ">
+    <div className="flex flex-col w-screen">
       <div className="lg:grid lg:grid-cols-3 flex flex-col flex-grow justify-between">
       <div className="flex flex-col col-span-2 h-max p-8">
           <div className="md:hidden">
