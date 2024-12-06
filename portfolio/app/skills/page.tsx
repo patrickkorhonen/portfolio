@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Image from "next/image";
 import NavBar from "../components/NavBar";
 import BurgerMenu from "../components/BurgerMenu";

@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import { MdOutlineAlternateEmail, MdPhoneEnabled } from "react-icons/md";
 import { TbSocial } from "react-icons/tb";
 import { SocialIcon } from "react-social-icons";
